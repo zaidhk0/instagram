@@ -67,6 +67,10 @@ input::placeholder {
   cursor: pointer;
 }
 
+.login-btn:hover {
+  background: #1877f2;
+}
+
 /* ====== OR LINE ====== */
 .or {
   display: flex;
@@ -142,5 +146,15 @@ footer {
 
   .logo {
     font-size: 42px;
+  }
+
+  input {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .login-btn {
+    padding: 12px;
+    font-size: 15px;
   }
 }
