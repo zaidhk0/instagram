@@ -135,6 +135,12 @@ footer {
     background: #111b21;
   }
 
+  .mobile-container {
+  max-width: 420px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
   .left {
     display: none; /* مثل الصورة تمامًا */
   }
@@ -200,4 +206,5 @@ footer {
 .login-btn:not(:disabled):hover {
   background: #1877f2;
 }
+
 
