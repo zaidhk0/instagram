@@ -127,17 +127,16 @@ footer {
 }
 
 /* ========================= */
-/* 📱 MOBILE RESPONSIVE */
+/* 📱 MOBILE VERSION */
 /* ========================= */
 @media (max-width: 768px) {
 
-  /* إخفاء الصورة مثل إنستغرام */
-  .left {
-    display: none;
+  body {
+    background: #111b21;
   }
 
-  .container {
-    gap: 0;
+  .left {
+    display: none; /* مثل الصورة تمامًا */
   }
 
   .right {
@@ -145,7 +144,7 @@ footer {
   }
 
   .logo {
-    font-size: 42px;
+    margin-bottom: 30px;
   }
 
   input {
@@ -201,3 +200,4 @@ footer {
 .login-btn:not(:disabled):hover {
   background: #1877f2;
 }
+
