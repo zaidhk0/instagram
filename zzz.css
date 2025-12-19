@@ -158,19 +158,51 @@ footer {
     font-size: 15px;
   }
 
-  /* ====== DISABLED LOGIN BUTTON ====== */
-.login-btn:disabled {
-  background: #1d3c5c;   /* غامق = مطفي */
+/* ====== LOGIN BUTTON (DEFAULT = مطفي) ====== */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1d3c5c;     /* غامق = مطفي */
+  border: none;
   color: #a8c7e6;
+  font-weight: bold;
+  border-radius: 8px;
   opacity: 0.5;
   cursor: default;
-  pointer-events: none;  /* 🔴 يمنع الكبس 100% */
+  pointer-events: none;    /* لا كبس */
+  transition: background 0.2s ease, opacity 0.2s ease;
 }
 
-/* يمنع أي hover */
-.login-btn:disabled:hover {
-  background: #1d3c5c;
+/* ====== LOGIN BUTTON (DEFAULT = مطفي) ====== */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1d3c5c;     /* غامق = مطفي */
+  border: none;
+  color: #a8c7e6;
+  font-weight: bold;
+  border-radius: 8px;
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;    /* لا كبس */
+  transition: background 0.2s ease, opacity 0.2s ease;
 }
+
+/* ====== لما يتفعّل ====== */
+.login-btn:not(:disabled) {
+  background: #0095f6;     /* الأزرق الحقيقي */
+  color: white;
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* hover فقط لما يكون مفعل */
+.login-btn:not(:disabled):hover {
+  background: #1877f2;
+}
+
+
 
 
 
