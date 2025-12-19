@@ -157,14 +157,18 @@ footer {
     padding: 12px;
     font-size: 15px;
   }
+/* ====== DISABLED LOGIN BUTTON ====== */
+.login-btn:disabled {
+  background: #4db5f9;   /* أزرق فاتح مثل إنستغرام */
+  opacity: 0.6;
+  cursor: not-allowed;
 }
-/* ====== ERROR MESSAGE ====== */
-.error-msg {
-  color: #ed4956;           /* لون الخطأ الأصلي تقريبًا */
-  font-size: 14px;
-  text-align: center;
-  margin: 10px 0;
-  display: none;
+
+/* منع hover لما يكون معطّل */
+.login-btn:disabled:hover {
+  background: #4db5f9;
 }
+
+
 
 
