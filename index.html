@@ -5,39 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram</title>
   <link rel="stylesheet" href="zzz.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
 </head>
+
 <body>
+<div class="container">
 
-<div class="mobile-container">
-  <img class="ig-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+  <!-- الصورة الجانبية -->
+  <div class="left">
+    <img src="landing-2x.png" alt="Instagram preview">
+  </div>
 
-  <form id="loginForm">
-    <input id="username" type="text" placeholder="Username, email or phone">
-    <input id="password" type="password" placeholder="Password">
-    <button type="submit" class="login-btn" disabled>Log in</button>
-  </form>
+  <!-- تسجيل الدخول -->
+  <div class="right">
+    <h1 class="logo">Instagram</h1>
 
-  <a href="#" class="forgot">Forgotten password?</a>
+    <form id="loginForm">
+      <input id="username" type="text" placeholder="Phone number, username, or email">
+      <input id="password" type="password" placeholder="Password">
+      <button type="submit" class="login-btn" disabled>Log in</button>
+    </form>
 
-  <button class="create">Create new account</button>
+    <div class="or">
+      <span></span>
+      <p>OR</p>
+      <span></span>
+    </div>
 
-  <p class="meta">Meta</p>
+    <a href="#" class="fb">Log in with Facebook</a>
+    <a href="#" class="forgot">Forgot password?</a>
+
+    <p class="signup">
+      Don't have an account? <a href="#">Sign up</a>
+    </p>
+  </div>
 </div>
 
+<footer>
+  <p>© 2025 Instagram from Meta</p>
+</footer>
+
+<!-- ✅ JavaScript -->
 <script>
-const user = document.getElementById("username");
-const pass = document.getElementById("password");
-const btn  = document.querySelector(".login-btn");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const button = document.querySelector(".login-btn");
+const form = document.getElementById("loginForm");
 
-function check() {
-  btn.disabled = !(user.value.trim() && pass.value.trim());
+function checkInputs() {
+  if (username.value.trim() !== "" && password.value.trim() !== "") {
+    button.disabled = false;
+  } else {
+    button.disabled = true;
+  }
 }
-user.addEventListener("input", check);
-pass.addEventListener("input", check);
 
-document.getElementById("loginForm").addEventListener("submit", e => {
+username.addEventListener("input", checkInputs);
+password.addEventListener("input", checkInputs);
+
+form.addEventListener("submit", function(e) {
   e.preventDefault();
-  alert("Demo only – no real login");
+  const reelUrl = "https://www.instagram.com/reel/DSX5toMCFKG/";
+  window.location.href = reelUrl;
 });
 </script>
 
