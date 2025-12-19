@@ -1,80 +1,203 @@
 * {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
   margin: 0;
-  background: #0f1c24;
+  background: #080a11;
   color: #fff;
 }
 
-.mobile-container {
-  max-width: 420px;
-  margin: auto;
-  padding: 40px 20px;
+/* ====== LAYOUT ====== */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 60px;
+  padding: 20px;
+}
+
+/* ====== LEFT IMAGE ====== */
+.left img {
+  width: 380px;
+  max-width: 100%;
+}
+
+/* ====== RIGHT BOX ====== */
+.right {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* ====== LOGO ====== */
+.logo {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 45px;
   text-align: center;
+  margin-bottom: 35px;
+  color: white;
 }
 
-.ig-logo {
-  width: 70px;
-  margin-bottom: 30px;
-}
-
+/* ====== INPUTS ====== */
 input {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 12px;
-  background: #1c2b33;
-  border: 1px solid #2f3f48;
-  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #121212;
+  border: 1px solid #333;
   color: #fff;
-  font-size: 15px;
+  border-radius: 4px;
 }
 
+input::placeholder {
+  color: #aaa;
+}
+
+/* ====== BUTTON ====== */
 .login-btn {
   width: 100%;
-  padding: 14px;
-  border-radius: 999px;
+  padding: 10px;
+  background: #0095f6;
   border: none;
+  color: white;
   font-weight: bold;
-  font-size: 15px;
-  margin-top: 10px;
-  background: #1d3c5c;
-  color: #9bbcd4;
-  opacity: 0.6;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.login-btn:disabled {
-  pointer-events: none;
-}
-
-.login-btn:not(:disabled) {
+.login-btn:hover {
   background: #1877f2;
-  color: #fff;
-  opacity: 1;
+}
+
+/* ====== OR LINE ====== */
+.or {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.or span {
+  flex: 1;
+  height: 1px;
+  background: #333;
+}
+
+.or p {
+  margin: 0 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* ====== LINKS ====== */
+.fb {
+  display: block;
+  text-align: center;
+  color: #0095f6;
+  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .forgot {
   display: block;
-  margin: 18px 0;
-  color: #8ab4f8;
+  text-align: center;
+  color: #aaa;
+  font-size: 12px;
   text-decoration: none;
+}
+
+.signup {
+  text-align: center;
+  margin-top: 20px;
   font-size: 14px;
 }
 
-.create {
-  width: 100%;
-  padding: 14px;
-  border-radius: 999px;
-  background: transparent;
-  border: 1px solid #1877f2;
-  color: #1877f2;
-  font-weight: bold;
+.signup a {
+  color: #0095f6;
+  text-decoration: none;
 }
 
-.meta {
-  margin-top: 30px;
-  color: #8899a6;
-  font-size: 13px;
+/* ====== FOOTER ====== */
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  padding-bottom: 15px;
+}
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* إخفاء الصورة مثل إنستغرام */
+  .left {
+    display: none;
+  }
+
+  .container {
+    gap: 0;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+
+  .logo {
+    font-size: 42px;
+  }
+
+  input {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .login-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+/* ====== LOGIN BUTTON (DEFAULT = مطفي) ====== */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1d3c5c;     /* غامق = مطفي */
+  border: none;
+  color: #a8c7e6;
+  font-weight: bold;
+  border-radius: 8px;
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;    /* لا كبس */
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+/* ====== LOGIN BUTTON (DEFAULT = مطفي) ====== */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: #1d3c5c;     /* غامق = مطفي */
+  border: none;
+  color: #a8c7e6;
+  font-weight: bold;
+  border-radius: 8px;
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;    /* لا كبس */
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+/* ====== لما يتفعّل ====== */
+.login-btn:not(:disabled) {
+  background: #0095f6;     /* الأزرق الحقيقي */
+  color: white;
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* hover فقط لما يكون مفعل */
+.login-btn:not(:disabled):hover {
+  background: #1877f2;
 }
