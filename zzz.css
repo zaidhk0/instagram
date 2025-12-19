@@ -157,17 +157,22 @@ footer {
     padding: 12px;
     font-size: 15px;
   }
-/* ====== DISABLED LOGIN BUTTON ====== */
+
+  /* ====== DISABLED LOGIN BUTTON ====== */
 .login-btn:disabled {
-  background: #4db5f9;   /* أزرق فاتح مثل إنستغرام */
-  opacity: 0.6;
-  cursor: not-allowed;
+  background: #1d3c5c;   /* غامق = مطفي */
+  color: #a8c7e6;
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;  /* 🔴 يمنع الكبس 100% */
 }
 
-/* منع hover لما يكون معطّل */
+/* يمنع أي hover */
 .login-btn:disabled:hover {
-  background: #4db5f9;
+  background: #1d3c5c;
 }
+
+
 
 
 
