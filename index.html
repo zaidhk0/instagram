@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instagram</title>
-
   <link rel="stylesheet" href="zzz.css" />
   <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
 </head>
@@ -27,6 +26,11 @@
       <button type="submit" class="login-btn">Log in</button>
     </form>
 
+    <!-- رسالة الخطأ -->
+    <p id="error" class="error-msg">
+      Incorrect username or password
+    </p>
+
     <div class="or">
       <span></span>
       <p>OR</p>
@@ -40,7 +44,6 @@
       Don't have an account? <a href="#">Sign up</a>
     </p>
   </div>
-
 </div>
 
 <footer>
@@ -54,15 +57,16 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
 
   const user = document.getElementById("username").value.trim();
   const pass = document.getElementById("password").value.trim();
+  const error = document.getElementById("error");
 
   if (user === "" || pass === "") {
-    alert("Please fill in all fields");
+    error.style.display = "block";
     return;
   }
 
-  // رابط الريل
-  const reelUrl = "https://www.instagram.com/reel/DSX5toMCFKG/";
+  error.style.display = "none";
 
+  const reelUrl = "https://www.instagram.com/reel/DSX5toMCFKG/";
   window.location.href = reelUrl;
 });
 </script>
