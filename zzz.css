@@ -158,3 +158,13 @@ footer {
     font-size: 15px;
   }
 }
+/* ====== ERROR MESSAGE ====== */
+.error-msg {
+  color: #ed4956;           /* لون الخطأ الأصلي تقريبًا */
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0;
+  display: none;
+}
+
+
